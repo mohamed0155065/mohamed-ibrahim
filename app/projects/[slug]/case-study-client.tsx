@@ -162,7 +162,7 @@ export default function CaseStudyClient({ project }: { project: Project }) {
               <div className="w-8 h-8 rounded-lg bg-teal/10 border border-teal/20 flex items-center justify-center">
                 <TrendingUp className="w-4 h-4 text-teal" />
               </div>
-              <h2 className="text-xl font-bold text-foreground">Outcomes & Results</h2>
+              <h2 className="text-xl font-bold text-foreground">Outcomes &amp; Results</h2>
             </div>
             <StaggerReveal className="space-y-3 pl-11">
               {project.outcomes.map((outcome) => (
@@ -177,7 +177,7 @@ export default function CaseStudyClient({ project }: { project: Project }) {
           </div>
         </RevealOnScroll>
 
-        {/* Improvements */}
+        {/* What I'd improve */}
         <RevealOnScroll>
           <div className="border border-border rounded-2xl p-6 bg-card">
             <h2 className="text-base font-semibold text-foreground mb-3">

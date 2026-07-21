@@ -8,8 +8,11 @@ export default function Footer() {
     <footer className="border-t border-border py-10 px-6">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
         <div>
-          <Link href="/" className="font-mono text-sm text-teal">
-            me@portfolio:~$
+          <Link
+            href="/"
+            className="font-bold text-lg text-foreground hover:text-teal transition-colors tracking-tight"
+          >
+            Mohamed<span className="text-teal">.</span>
           </Link>
           <p className="text-xs text-muted-foreground mt-1">
             &copy; {new Date().getFullYear()} Mohamed Ibrahim Mohamed. All rights reserved.

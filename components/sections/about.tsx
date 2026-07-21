@@ -49,16 +49,17 @@ export default function About() {
           <RevealOnScroll delay={0.1}>
             <div className="space-y-5 text-muted-foreground leading-relaxed">
               <p>
-                Most frontend engineers build the interface. Most AI developers build the backend logic.{' '}
+                Most frontend engineers build the interface. Most AI developers build the backend
+                logic.{' '}
                 <span className="text-foreground font-medium">
                   I build the complete product — both layers, integrated from the start.
                 </span>
               </p>
               <p>
                 My work combines production-grade Next.js applications — edge authentication, Server
-                Actions, normalized state, zero hydration mismatches — with AI systems that make those
-                applications genuinely intelligent. Document analysis platforms. Automated hiring
-                pipelines. Context-aware customer service bots.
+                Actions, normalized state, zero hydration mismatches — with AI systems that make
+                those applications genuinely intelligent. Document analysis platforms. Automated
+                hiring pipelines. Context-aware customer service bots.
               </p>
               <p>
                 Every project in my portfolio shipped to production with measurable outcomes: bundle

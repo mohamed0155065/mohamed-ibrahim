@@ -21,13 +21,18 @@ export default function Navbar() {
   return (
     <motion.header
       className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md"
-      style={{ borderBottom: '1px solid', borderColor: `oklch(1 0 0 / ${borderOpacity.get() * 8}%)` }}
+      style={{
+        borderBottom: '1px solid',
+        borderColor: borderOpacity.get() > 0
+          ? `oklch(1 0 0 / ${borderOpacity.get() * 8}%)`
+          : 'transparent',
+      }}
     >
       <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link
           href="/"
-          className="font-sans font-semibold text-base text-foreground hover:text-teal transition-colors tracking-tight"
+          className="font-sans font-bold text-lg text-foreground hover:text-teal transition-colors tracking-tight"
         >
           Mohamed<span className="text-teal">.</span>
         </Link>
@@ -44,7 +49,7 @@ export default function Navbar() {
             </Link>
           ))}
           <a
-            href="/Mohamed-Ebrahim-Mohamed-CV.pdf"
+            href="/Mohamed-Ebrahim-cv.pdf"
             download="Mohamed-Ebrahim-Mohamed-CV.pdf"
             className="text-sm px-4 py-2 border border-teal/40 text-teal rounded-lg hover:bg-teal/10 transition-colors"
           >
@@ -100,7 +105,7 @@ export default function Navbar() {
               </Link>
             ))}
             <a
-              href="/Mohamed-Ebrahim-Mohamed-CV.pdf"
+              href="/Mohamed-Ebrahim-cv.pdf"
               download="Mohamed-Ebrahim-Mohamed-CV.pdf"
               className="text-sm px-4 py-2 border border-teal/40 text-teal rounded-lg hover:bg-teal/10 transition-colors text-center"
             >
