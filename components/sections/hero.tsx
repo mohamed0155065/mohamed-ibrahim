@@ -42,7 +42,7 @@ export default function Hero() {
               variants={fadeInUp}
               className="text-lg md:text-xl text-muted-foreground font-mono mb-6 leading-relaxed"
             >
-              Frontend Engineer & AI Automation Developer
+              Frontend Engineer &amp; AI Automation Developer
             </motion.p>
 
             {/* Tagline */}
@@ -102,7 +102,9 @@ export default function Hero() {
                 <Mail className="w-5 h-5" />
               </a>
               <span className="text-border">|</span>
-              <span className="text-xs text-muted-foreground font-mono">Mansoura, Egypt · UTC+2</span>
+              <span className="text-xs text-muted-foreground font-mono">
+                Mansoura, Egypt &middot; UTC+2
+              </span>
             </motion.div>
           </motion.div>
 
@@ -114,9 +116,9 @@ export default function Hero() {
             className="order-1 lg:order-2 flex justify-center"
           >
             <div className="relative">
-              {/* Teal glow ring */}
+              {/* Teal glow */}
               <div className="absolute inset-0 rounded-2xl bg-teal/15 blur-2xl scale-110" />
-              {/* Border frame */}
+              {/* Photo frame */}
               <div className="relative w-72 h-80 md:w-80 md:h-96 rounded-2xl overflow-hidden border border-teal/20 shadow-2xl">
                 <Image
                   src="/images/profile.jpg"
@@ -125,10 +127,9 @@ export default function Hero() {
                   className="object-cover object-top"
                   priority
                 />
-                {/* Subtle overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-background/30 via-transparent to-transparent" />
               </div>
-              {/* Floating stats */}
+              {/* Floating stat — stack */}
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -138,6 +139,7 @@ export default function Hero() {
                 <p className="text-xs text-muted-foreground font-mono">stack</p>
                 <p className="text-xs font-medium text-foreground">React · Next.js · AI</p>
               </motion.div>
+              {/* Floating stat — projects */}
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}

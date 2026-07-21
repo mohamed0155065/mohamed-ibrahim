@@ -26,16 +26,11 @@ export default function Projects() {
           {projects.map((project) => (
             <StaggerItem key={project.slug} variants={fadeInUp}>
               <article className="group relative flex flex-col h-full border border-border rounded-2xl overflow-hidden bg-card hover:border-teal/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-teal/5">
-                {/* Color wash header */}
-                <div className={`h-2 w-full bg-gradient-to-r ${project.color} bg-teal/20`} />
-                <div className={`h-32 w-full bg-gradient-to-br ${project.color}`}>
-                  <div className="h-full w-full flex items-center justify-center">
-                    <div className="text-center">
-                      <span className="font-mono text-xs text-muted-foreground border border-border rounded-full px-3 py-1">
-                        {project.category}
-                      </span>
-                    </div>
-                  </div>
+                {/* Gradient header */}
+                <div className={`h-32 w-full bg-gradient-to-br ${project.color} flex items-center justify-center`}>
+                  <span className="font-mono text-xs text-muted-foreground border border-border bg-background/40 backdrop-blur-sm rounded-full px-3 py-1">
+                    {project.category}
+                  </span>
                 </div>
 
                 {/* Content */}
@@ -86,7 +81,7 @@ export default function Projects() {
                   </div>
 
                   {/* Links */}
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-4">
                     <Link
                       href={`/projects/${project.slug}`}
                       className="inline-flex items-center gap-1.5 text-sm text-teal hover:text-teal/80 font-medium transition-colors"

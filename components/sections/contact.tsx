@@ -36,14 +36,11 @@ export default function Contact() {
         </RevealOnScroll>
 
         <div className="grid lg:grid-cols-2 gap-12">
-          {/* Left: info */}
+          {/* Left: contact info */}
           <RevealOnScroll delay={0.1}>
             <div className="space-y-8">
               <div className="space-y-4">
-                <a
-                  href={`mailto:${siteConfig.email}`}
-                  className="flex items-center gap-4 group"
-                >
+                <a href={`mailto:${siteConfig.email}`} className="flex items-center gap-4 group">
                   <div className="w-10 h-10 rounded-lg bg-teal/10 border border-teal/20 flex items-center justify-center flex-shrink-0">
                     <Mail className="w-4 h-4 text-teal" />
                   </div>
