@@ -1,19 +1,36 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { ExternalLink, ArrowRight } from 'lucide-react'
 import { GithubIcon } from '@/components/icons'
 import { RevealOnScroll, StaggerReveal, StaggerItem, fadeInUp } from '@/components/motion'
 import { projects } from '@/lib/data'
 
+const numberWords: Record<number, string> = {
+  1: 'One',
+  2: 'Two',
+  3: 'Three',
+  4: 'Four',
+  5: 'Five',
+  6: 'Six',
+  7: 'Seven',
+  8: 'Eight',
+  9: 'Nine',
+  10: 'Ten',
+}
+
 export default function Projects() {
+  const count = projects.length
+  const countLabel = numberWords[count] ?? String(count)
+
   return (
     <section id="projects" className="py-24 px-6">
       <div className="max-w-6xl mx-auto">
         <RevealOnScroll className="mb-14">
           <span className="font-mono text-xs text-teal tracking-widest uppercase">Projects</span>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mt-4 mb-4 text-balance">
-            Four projects. Each one{' '}
+            {countLabel} projects. Each one{' '}
             <span className="text-teal">shipped to production.</span>
           </h2>
           <p className="text-muted-foreground max-w-xl leading-relaxed">
@@ -26,9 +43,20 @@ export default function Projects() {
           {projects.map((project) => (
             <StaggerItem key={project.slug} variants={fadeInUp}>
               <article className="group relative flex flex-col h-full border border-border rounded-2xl overflow-hidden bg-card hover:border-teal/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-teal/5">
-                {/* Gradient header */}
-                <div className={`h-32 w-full bg-gradient-to-br ${project.color} flex items-center justify-center`}>
-                  <span className="font-mono text-xs text-muted-foreground border border-border bg-background/40 backdrop-blur-sm rounded-full px-3 py-1">
+                {/* Header: screenshot if available, gradient fallback otherwise */}
+                <div className={`relative w-full aspect-[16/9] overflow-hidden bg-gradient-to-br ${project.color}`}>
+                  {project.image && (
+                    <Image
+                      src={project.image}
+                      alt={`${project.title} screenshot`}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      style={{ objectFit: 'cover', objectPosition: 'top' }}
+                      className="transition-transform duration-300 group-hover:scale-105"
+                    />
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
+                  <span className="absolute bottom-3 left-3 font-mono text-xs text-muted-foreground border border-border bg-background/60 backdrop-blur-sm rounded-full px-3 py-1">
                     {project.category}
                   </span>
                 </div>

@@ -38,6 +38,7 @@ export const skills = {
 export const projects = [
   {
     slug: 'marketly',
+    image: '/images/marketly.png',
     title: 'Marketly',
     subtitle: 'Production-Grade E-Commerce Platform',
     year: '2026',
@@ -90,6 +91,7 @@ export const projects = [
   },
   {
     slug: 'ai-document-assistant',
+    image: '/images/ai-document-assistant.png',
     title: 'AI Document Assistant',
     subtitle: 'Multi-Tenant AI Document Processing Platform',
     year: '2025',
@@ -107,12 +109,12 @@ export const projects = [
       { label: 'LLM provider', value: 'Groq (low-latency)' },
     ],
     problem:
-      'Teams needed to analyze large volumes of documents against custom criteria without sending raw files to a third-party SaaS. The platform needed strict user isolation, flexible prompt control, and fast inference.',
+      "Teams needed to analyze large volumes of documents against custom criteria without sending raw files to a third-party SaaS. The platform needed strict user isolation, flexible prompt control, and fast inference.",
     decisions: [
       {
         title: 'Multi-Tenant Workspace Isolation via Supabase RLS',
         detail:
-          'Every project, document, and AI output is scoped to the authenticated user through Supabase Row Level Security. No user can query another tenant\'s data, regardless of the API call shape.',
+          "Every project, document, and AI output is scoped to the authenticated user through Supabase Row Level Security. No user can query another tenant's data, regardless of the API call shape.",
       },
       {
         title: 'Document Ingestion Pipelines',
@@ -122,7 +124,7 @@ export const projects = [
       {
         title: 'Multi-Document Context Aggregation',
         detail:
-          'Designed a context aggregation layer that merges extracted content from multiple documents with user-defined prompts before sending to Groq. This enables coherent analysis across an entire project\'s document set.',
+          "Designed a context aggregation layer that merges extracted content from multiple documents with user-defined prompts before sending to Groq. This enables coherent analysis across an entire project's document set.",
       },
       {
         title: 'Groq API for Low-Latency Inference',
@@ -141,7 +143,114 @@ export const projects = [
       'Add streaming AI responses for large documents, implement semantic search across document content using embeddings, and support bulk export of analysis outputs.',
   },
   {
+    slug: 'react-admin',
+    image: '/images/react-admin.png',
+    title: 'React Admin Dashboard',
+    subtitle: 'General-Purpose Admin & Analytics Panel',
+    year: '2025',
+    category: 'Frontend',
+    tags: ['React', 'Vite', 'TypeScript', 'Context API', 'Recharts', 'Lucide Icons'],
+    summary:
+      'A general-purpose admin dashboard for managing users, orders, and business metrics. Built with a reusable component system, live data tables, and interactive charts for at-a-glance reporting.',
+    liveUrl: 'https://react-admin-dashboard-bqcs.vercel.app/',
+    githubUrl: 'https://github.com/mohamed0155065/React-admin-dashboard',
+    color: 'from-emerald-900/20 to-background',
+    accentColor: 'text-teal',
+    metrics: [
+      { label: 'Core modules', value: 'Users, Orders, Stats' },
+      { label: 'Type safety', value: '100%' },
+      { label: 'Build tool', value: 'Vite' },
+    ],
+    problem:
+      "Most admin dashboard templates ship as bloated, hard-to-customize boilerplate — every table, chart, and layout hardcoded to one use case. The goal was to build a lean, reusable admin foundation that could plug into any backend and scale from a handful of screens to a full internal tool without a rewrite.",
+    decisions: [
+      {
+        title: 'Reusable Component System',
+        detail:
+          'Built a shared library of table, card, and chart components with a consistent prop API. Any new admin screen (users, orders, or a future module) reuses the same building blocks instead of duplicating layout and logic.',
+      },
+      {
+        title: 'Centralized State via Context API',
+        detail:
+          'Kept global concerns — active section, filters, and theme — in a small set of Context providers, avoiding prop drilling across nested dashboard views while keeping the state layer easy to reason about.',
+      },
+      {
+        title: 'Interactive Data Visualization with Recharts',
+        detail:
+          'Added Recharts-powered summary charts on the overview screen so key metrics (user growth, order volume) are readable at a glance instead of buried in raw tables.',
+      },
+      {
+        title: 'Vite for Fast Iteration',
+        detail:
+          'Chose Vite over CRA for instant HMR during development and a lean production build, keeping the dashboard snappy as more modules get added.',
+      },
+    ],
+    outcomes: [
+      'Reusable table, card, and chart components shared across all dashboard modules',
+      'Centralized Context API state eliminating prop drilling across nested views',
+      'At-a-glance analytics via interactive Recharts summary charts',
+      'Fully responsive layout across desktop and tablet breakpoints',
+      'Fast development workflow with Vite HMR and optimized production builds',
+    ],
+    improvements:
+      'Connect to a real backend API with authentication and role-based permissions, add data export (CSV/PDF), and introduce dark mode support.',
+  },
+  {
+    slug: 'movies-management',
+    image: '/images/movies-app.png',
+    title: 'Movies Management Application',
+    subtitle: 'High-Performance React App with Normalized State',
+    year: '2025',
+    category: 'Frontend',
+    tags: ['React', 'Redux Toolkit', 'TypeScript', 'Vite', 'React.lazy', 'Suspense'],
+    summary:
+      'A high-performance movie management application featuring normalized Redux state with memoized selectors, route-level code splitting, and persisted user preferences. Built with modern React patterns for optimal rendering performance.',
+    liveUrl: 'https://movies-app-sepia-nu.vercel.app',
+    githubUrl: 'https://github.com/mohamed0155065',
+    color: 'from-rose-900/20 to-background',
+    accentColor: 'text-teal',
+    metrics: [
+      { label: 'Initial load reduction', value: '~30%' },
+      { label: 'State normalization', value: 'createEntityAdapter' },
+      { label: 'Build tool', value: 'Vite' },
+    ],
+    problem:
+      'Movie management apps often suffer from redundant re-renders during filtering and sorting, slow initial loads from monolithic bundles, and scattered user preferences. The challenge was to build a snappy, responsive app that handles large movie lists without performance degradation.',
+    decisions: [
+      {
+        title: 'Normalized Redux State with createEntityAdapter',
+        detail:
+          "Engineered a normalized state shape using Redux Toolkit's createEntityAdapter with memoized selectors. This eliminated redundant re-renders during filtering and sorting by ensuring components only re-render when their specific slice of derived data actually changes — not on every state update.",
+      },
+      {
+        title: 'Route-Level Code Splitting with React.lazy + Suspense',
+        detail:
+          'Reduced initial load time by ~30% through route-level code splitting. Each major route is loaded on-demand via React.lazy wrapped in Suspense boundaries, ensuring users only download the code they need for the current view rather than the entire application upfront.',
+      },
+      {
+        title: 'Centralized Global Store for User Preferences',
+        detail:
+          'Persisted user preferences (sort order, filter criteria, view mode) in a centralized global store, completely eliminating prop drilling across the component tree. This keeps the UI state predictable and makes preference changes instantly reflected across all dependent components.',
+      },
+      {
+        title: 'Vite for Lightning-Fast Development & Builds',
+        detail:
+          'Chose Vite over Create React App for its instant Hot Module Replacement and optimized production builds. The development experience stays snappy even as the codebase grows, and production bundles are aggressively tree-shaken for minimal payload.',
+      },
+    ],
+    outcomes: [
+      'Normalized Redux state eliminating redundant re-renders during filtering and sorting',
+      '~30% reduction in initial load time via React.lazy + Suspense code splitting',
+      'Zero prop drilling through centralized global store for user preferences',
+      'Lightning-fast development workflow with Vite HMR and optimized production builds',
+      '100% TypeScript coverage ensuring type-safe state management and component props',
+    ],
+    improvements:
+      'Add infinite scroll for large movie lists, implement optimistic updates for favorite toggles, and integrate with a movie metadata API (TMDB) for richer data.',
+  },
+  {
     slug: 'customer-service-bot',
+    image: '/images/telegram-bot.png',
     title: 'Customer Service Telegram Bot',
     subtitle: 'AI-Powered Automated Support System',
     year: '2025',
@@ -188,6 +297,7 @@ export const projects = [
   },
   {
     slug: 'automated-hiring-system',
+    image: '/images/hiring-system.png',
     title: 'Automated Hiring System',
     subtitle: 'End-to-End Recruitment Automation Pipeline',
     year: '2025',
@@ -205,7 +315,7 @@ export const projects = [
       { label: 'Stack', value: 'n8n + LLM + Webhooks' },
     ],
     problem:
-      'Recruiting teams were spending 60–70% of screening time on initial CV reviews — repetitive work that doesn\'t require human judgment. The system needed to score objectively against criteria, not introduce bias.',
+      "Recruiting teams were spending 60–70% of screening time on initial CV reviews — repetitive work that doesn't require human judgment. The system needed to score objectively against criteria, not introduce bias.",
     decisions: [
       {
         title: 'Structured LLM Scoring with Explicit Criteria',
@@ -227,7 +337,7 @@ export const projects = [
       '5-stage automated pipeline: ingestion, LLM scoring, threshold filtering, routing, and communication',
       'Structured JSON scoring output enabling objective threshold-based candidate filtering',
       'Personalized automated communications for both shortlisted and rejected candidates',
-      'Full pipeline visibility through n8n\'s visual workflow interface',
+      "Full pipeline visibility through n8n's visual workflow interface",
       'Eliminated manual initial screening phase entirely',
     ],
     improvements:
