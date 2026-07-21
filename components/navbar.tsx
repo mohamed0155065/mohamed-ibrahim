@@ -44,9 +44,8 @@ export default function Navbar() {
             </Link>
           ))}
           <a
-            href={siteConfig.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/Mohamed-Ebrahim-Mohamed-CV.pdf"
+            download="Mohamed-Ebrahim-Mohamed-CV.pdf"
             className="text-sm px-4 py-2 border border-teal/40 text-teal rounded-lg hover:bg-teal/10 transition-colors"
           >
             Download CV
@@ -101,9 +100,8 @@ export default function Navbar() {
               </Link>
             ))}
             <a
-              href={siteConfig.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/Mohamed-Ebrahim-Mohamed-CV.pdf"
+              download="Mohamed-Ebrahim-Mohamed-CV.pdf"
               className="text-sm px-4 py-2 border border-teal/40 text-teal rounded-lg hover:bg-teal/10 transition-colors text-center"
             >
               Download CV
