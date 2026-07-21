@@ -27,9 +27,9 @@ export default function Navbar() {
         {/* Logo */}
         <Link
           href="/"
-          className="font-mono text-sm text-teal hover:text-teal/80 transition-colors tracking-tight"
+          className="font-sans font-semibold text-base text-foreground hover:text-teal transition-colors tracking-tight"
         >
-          me@portfolio:~$
+          Mohamed<span className="text-teal">.</span>
         </Link>
 
         {/* Desktop links */}
@@ -44,8 +44,9 @@ export default function Navbar() {
             </Link>
           ))}
           <a
-            href="/cv.pdf"
-            download
+            href={siteConfig.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-sm px-4 py-2 border border-teal/40 text-teal rounded-lg hover:bg-teal/10 transition-colors"
           >
             Download CV
@@ -100,8 +101,9 @@ export default function Navbar() {
               </Link>
             ))}
             <a
-              href="/cv.pdf"
-              download
+              href={siteConfig.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-sm px-4 py-2 border border-teal/40 text-teal rounded-lg hover:bg-teal/10 transition-colors text-center"
             >
               Download CV
