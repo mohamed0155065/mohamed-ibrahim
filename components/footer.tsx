@@ -6,8 +6,8 @@ import { siteConfig } from '@/lib/data'
 export default function Footer() {
   return (
     <footer className="border-t border-border py-10 px-6">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-        <div>
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-center justify-between gap-8 md:gap-6">
+        <div className="text-center md:text-left">
           <Link
             href="/"
             className="font-bold text-lg text-foreground hover:text-teal transition-colors tracking-tight"
@@ -19,20 +19,23 @@ export default function Footer() {
           </p>
         </div>
 
-        <div className="flex items-center gap-6">
-          <nav className="flex gap-6" aria-label="Footer navigation">
+        <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
+          <nav
+            className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2"
+            aria-label="Footer navigation"
+          >
             {['About', 'Projects', 'Skills', 'Contact'].map((item) => (
               <Link
                 key={item}
                 href={`/#${item.toLowerCase()}`}
-                className="text-xs text-muted-foreground hover:text-foreground transition-colors"
+                className="text-xs text-muted-foreground hover:text-foreground transition-colors whitespace-nowrap"
               >
                 {item}
               </Link>
             ))}
           </nav>
 
-          <div className="flex items-center gap-3 border-l border-border pl-6">
+          <div className="flex items-center gap-3 sm:border-l sm:border-border sm:pl-6">
             <a
               href={siteConfig.github}
               target="_blank"
