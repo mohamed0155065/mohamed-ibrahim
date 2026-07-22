@@ -29,7 +29,7 @@ export const skills = {
     'LLM Integration (Groq API)',
     'Prompt Engineering',
     'Document Processing (PDF, DOCX)',
-    'n8n Webhooks & Automation',
+    'n8n & Activepieces Automation',
     'Multi-tenant AI Architecture',
   ],
   tooling: ['Vite', 'Git', 'Vercel', 'Conventional Commits'],
@@ -255,15 +255,16 @@ export const projects = [
     subtitle: 'AI-Powered Automated Support System',
     year: '2025',
     category: 'AI Automation',
-    tags: ['n8n', 'Telegram API', 'LLM Integration', 'Webhooks', 'Prompt Engineering'],
+    tags: ['Activepieces', 'Telegram API', 'LLM Integration', 'Webhooks', 'Prompt Engineering'],
     summary:
-      'An automated customer service bot built on Telegram using n8n workflows and LLM integration. Handles FAQs, routes complex queries, and maintains conversation context — reducing support load without sacrificing response quality.',
-    liveUrl: '#',
-    githubUrl: 'https://github.com/mohamed0155065',
+      'An automated customer service bot built on Telegram using Activepieces workflows and LLM integration. Handles FAQs, routes complex queries, and maintains conversation context — reducing support load without sacrificing response quality.',
+    liveUrl: 'https://t.me/Syntax_Customer_Services_bot',
+    githubUrl: 'https://cloud.activepieces.com/templates/zs43Ocw1xdPeHy9oNa5Gd',
+    linkLabel: 'Flow',
     color: 'from-cyan-900/20 to-background',
     accentColor: 'text-teal',
     metrics: [
-      { label: 'Automation layer', value: 'n8n Workflows' },
+      { label: 'Automation layer', value: 'Activepieces' },
       { label: 'Platform', value: 'Telegram API' },
       { label: 'Integration', value: 'LLM + Webhooks' },
     ],
@@ -271,9 +272,9 @@ export const projects = [
       'Small businesses spending significant hours on repetitive support tickets needed automation that felt human — not a rigid decision tree. The bot needed to understand intent, not just match keywords.',
     decisions: [
       {
-        title: 'n8n as the Workflow Orchestration Layer',
+        title: 'Activepieces as the Workflow Orchestration Layer',
         detail:
-          'n8n provides a visual, inspectable workflow engine that non-engineers can monitor. It handles Telegram webhook ingestion, message routing, LLM API calls, and response dispatch — all in a single auditable flow.',
+          'Activepieces provides a visual, inspectable workflow engine that non-engineers can monitor. It handles Telegram webhook ingestion, message routing, LLM API calls, and response dispatch — all in a single auditable flow.',
       },
       {
         title: 'Intent-Based Routing vs Keyword Matching',
@@ -288,7 +289,7 @@ export const projects = [
     ],
     outcomes: [
       'Automated FAQ handling with LLM-powered intent classification',
-      'n8n workflow orchestration with full audit trail and visual monitoring',
+      'Activepieces workflow orchestration with full audit trail and visual monitoring',
       'Context-aware multi-turn conversations via sliding-window history',
       'Seamless escalation path routing complex queries to human agents',
     ],
@@ -302,17 +303,18 @@ export const projects = [
     subtitle: 'End-to-End Recruitment Automation Pipeline',
     year: '2025',
     category: 'AI Automation',
-    tags: ['n8n', 'LLM Integration', 'Webhooks', 'Prompt Engineering', 'Automation'],
+    tags: ['Activepieces', 'LLM Integration', 'Webhooks', 'Prompt Engineering', 'Automation'],
     summary:
       'A fully automated hiring pipeline that ingests applications, scores candidates against defined criteria using LLM evaluation, routes shortlisted candidates for review, and dispatches automated communications — all without manual intervention.',
-    liveUrl: '#',
-    githubUrl: 'https://github.com/mohamed0155065',
+    liveUrl: 'https://cloud.activepieces.com/forms/yNX6MKiLtJKUWWMuj1ie3',
+    githubUrl: 'https://cloud.activepieces.com/templates/zs43Ocw1xdPeHy9oNa5Gd',
+    linkLabel: 'Flow',
     color: 'from-indigo-900/20 to-background',
     accentColor: 'text-teal',
     metrics: [
       { label: 'Pipeline stages automated', value: '5' },
       { label: 'Manual steps eliminated', value: 'Initial screening' },
-      { label: 'Stack', value: 'n8n + LLM + Webhooks' },
+      { label: 'Stack', value: 'Activepieces + LLM + Webhooks' },
     ],
     problem:
       "Recruiting teams were spending 60–70% of screening time on initial CV reviews — repetitive work that doesn't require human judgment. The system needed to score objectively against criteria, not introduce bias.",
@@ -323,21 +325,21 @@ export const projects = [
           'Candidates are scored using a structured prompt that provides explicit criteria weights (technical skills, experience level, required qualifications). The LLM outputs a JSON score object, not free text — enabling automated threshold filtering.',
       },
       {
-        title: 'n8n Multi-Stage Pipeline with Conditional Routing',
+        title: 'Activepieces Multi-Stage Pipeline with Conditional Routing',
         detail:
-          'Each pipeline stage (ingestion → scoring → threshold check → routing → communication) is a separate n8n node with conditional branches. This makes the logic transparent, auditable, and easy to modify without code changes.',
+          'Each pipeline stage (ingestion → scoring → threshold check → routing → communication) is a separate Activepieces step with conditional branches. This makes the logic transparent, auditable, and easy to modify without code changes.',
       },
       {
         title: 'Automated Communication Templates',
         detail:
-          'Shortlisted candidates receive personalized interview invitations; rejected candidates receive respectful, contextual rejection emails — all generated and dispatched automatically while remaining adjustable through the n8n template nodes.',
+          'Shortlisted candidates receive personalized interview invitations; rejected candidates receive respectful, contextual rejection emails — all generated and dispatched automatically while remaining adjustable through the Activepieces template steps.',
       },
     ],
     outcomes: [
       '5-stage automated pipeline: ingestion, LLM scoring, threshold filtering, routing, and communication',
       'Structured JSON scoring output enabling objective threshold-based candidate filtering',
       'Personalized automated communications for both shortlisted and rejected candidates',
-      "Full pipeline visibility through n8n's visual workflow interface",
+      "Full pipeline visibility through Activepieces's visual workflow interface",
       'Eliminated manual initial screening phase entirely',
     ],
     improvements:

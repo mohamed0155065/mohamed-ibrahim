@@ -134,10 +134,14 @@ export default function Projects() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
-                      aria-label={`GitHub repository for ${project.title}`}
+                      aria-label={`${project.linkLabel ?? 'Code'} link for ${project.title}`}
                     >
-                      <GithubIcon className="w-3.5 h-3.5" />
-                      Code
+                      {project.linkLabel === 'Flow' ? (
+                        <ExternalLink className="w-3.5 h-3.5" />
+                      ) : (
+                        <GithubIcon className="w-3.5 h-3.5" />
+                      )}
+                      {project.linkLabel ?? 'Code'}
                     </a>
                   </div>
                 </div>
